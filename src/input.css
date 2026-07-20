@@ -1,0 +1,69 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* Custom styling */
+body {
+    font-family: Arial, sans-serif;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+}
+
+.navbar ul {
+    display: flex;
+    gap: 1rem;
+}
+
+.judul {
+    text-align: center;
+    font-size: 3rem;
+    font-weight: bolder;
+}
+
+.dess {
+font-size: 2rem;
+    font-weight: lighter;
+    color: #575757;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    #menu {
+        flex-direction: column; /* Mengubah menu menjadi kolom */
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: #2f855a; /* Warna latar belakang yang sama dengan navbar */
+        z-index: 10; /* Agar menu berada di atas elemen lainnya */
+    }
+}
+
+
+.text-gradasi1{
+    background: #20B664;
+    background: linear-gradient(to bottom right, #20B664 2%, #297228 83%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.bg-gradasi1 {
+    background: rgb(0,36,7);
+background: linear-gradient(7deg, rgba(0,36,7,1) 0%, rgba(0,255,46,1) 100%);
+}
+.bg-gradasi2 {
+    background: rgb(2,161,33);
+    background: linear-gradient(357deg, rgba(2,161,33,1) 0%, rgba(0,201,36,1) 100%);
+}
+
+.slide {
+    display: none;
+}
+/* Show only the active slide */
+.active {
+    display: block;
+}
