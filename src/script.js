@@ -176,3 +176,35 @@ if (modalBackdrop) modalBackdrop.addEventListener('click', closeProductModal);
 document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') closeProductModal();
 });
+
+// ========== CLIENT-SIDE SEARCH FILTER ==========
+const navSearchInput = document.getElementById('nav-search-input');
+const mobileSearchInput = document.getElementById('mobile-search-input');
+
+function filterProducts(query) {
+    const cards = document.querySelectorAll('.product-card');
+    const lowerQuery = query.toLowerCase().trim();
+    cards.forEach(card => {
+        const name = (card.dataset.name || card.querySelector('h3')?.textContent || '').toLowerCase();
+        const category = (card.dataset.category || '').toLowerCase();
+        if (name.includes(lowerQuery) || category.includes(lowerQuery)) {
+            card.style.display = '';
+        } else {
+            card.style.display = 'none';
+        }
+    });
+}
+
+if (navSearchInput) {
+    navSearchInput.addEventListener('input', (e) => {
+        filterProducts(e.target.value);
+        if (mobileSearchInput) mobileSearchInput.value = e.target.value;
+    });
+}
+
+if (mobileSearchInput) {
+    mobileSearchInput.addEventListener('input', (e) => {
+        filterProducts(e.target.value);
+        if (navSearchInput) navSearchInput.value = e.target.value;
+    });
+}
