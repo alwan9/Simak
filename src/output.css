@@ -898,12 +898,8 @@ video {
   width: 2.25rem;
 }
 
-.w-\[40\%\]{
-  width: 40%;
-}
-
-.w-\[60\%\]{
-  width: 60%;
+.w-\[38\%\]{
+  width: 38%;
 }
 
 .w-full{
@@ -2049,4 +2045,301 @@ a:hover .arrow-icon, button:hover .arrow-icon {
 
 .group:hover .group-hover\:opacity-100{
   opacity: 1;
+}
+
+@media (min-width: 640px){
+  .sm\:block{
+    display: block;
+  }
+
+  .sm\:inline-block{
+    display: inline-block;
+  }
+
+  .sm\:h-12{
+    height: 3rem;
+  }
+
+  .sm\:h-48{
+    height: 12rem;
+  }
+
+  .sm\:h-6{
+    height: 1.5rem;
+  }
+
+  .sm\:w-12{
+    width: 3rem;
+  }
+
+  .sm\:w-6{
+    width: 1.5rem;
+  }
+
+  .sm\:gap-2{
+    gap: 0.5rem;
+  }
+
+  .sm\:gap-6{
+    gap: 1.5rem;
+  }
+
+  .sm\:p-8{
+    padding: 2rem;
+  }
+
+  .sm\:px-6{
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  .sm\:py-3\.5{
+    padding-top: 0.875rem;
+    padding-bottom: 0.875rem;
+  }
+
+  .sm\:py-8{
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  .sm\:text-3xl{
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+  }
+
+  .sm\:text-4xl{
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+  }
+
+  .sm\:text-sm{
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
+
+  .sm\:text-xs{
+    font-size: 0.75rem;
+    line-height: 1rem;
+  }
+}
+
+@media (min-width: 768px){
+  .md\:col-span-1{
+    grid-column: span 1 / span 1;
+  }
+
+  .md\:mx-0{
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+
+  .md\:mt-0{
+    margin-top: 0px;
+  }
+
+  .md\:block{
+    display: block;
+  }
+
+  .md\:flex{
+    display: flex;
+  }
+
+  .md\:hidden{
+    display: none;
+  }
+
+  .md\:h-10{
+    height: 2.5rem;
+  }
+
+  .md\:h-48{
+    height: 12rem;
+  }
+
+  .md\:h-72{
+    height: 18rem;
+  }
+
+  .md\:w-10{
+    width: 2.5rem;
+  }
+
+  .md\:w-48{
+    width: 12rem;
+  }
+
+  .md\:w-64{
+    width: 16rem;
+  }
+
+  .md\:w-72{
+    width: 18rem;
+  }
+
+  .md\:w-\[45\%\]{
+    width: 45%;
+  }
+
+  .md\:w-auto{
+    width: auto;
+  }
+
+  .md\:scale-100{
+    --tw-scale-x: 1;
+    --tw-scale-y: 1;
+    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  }
+
+  .md\:grid-cols-2{
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .md\:grid-cols-4{
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .md\:flex-row{
+    flex-direction: row;
+  }
+
+  .md\:items-center{
+    align-items: center;
+  }
+
+  .md\:justify-between{
+    justify-content: space-between;
+  }
+
+  .md\:gap-12{
+    gap: 3rem;
+  }
+
+  .md\:gap-4{
+    gap: 1rem;
+  }
+
+  .md\:rounded-3xl{
+    border-radius: 1.5rem;
+  }
+
+  .md\:p-10{
+    padding: 2.5rem;
+  }
+
+  .md\:p-12{
+    padding: 3rem;
+  }
+
+  .md\:px-0{
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+
+  .md\:py-4{
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  .md\:text-6xl{
+    font-size: 3.75rem;
+    line-height: 1;
+  }
+
+  .md\:text-lg{
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
+
+  .md\:text-sm{
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
+
+  .md\:text-xs{
+    font-size: 0.75rem;
+    line-height: 1rem;
+  }
+}
+
+@media (min-width: 1024px){
+  .lg\:h-56{
+    height: 14rem;
+  }
+
+  .lg\:min-h-0{
+    min-height: 0px;
+  }
+
+  .lg\:w-1\/2{
+    width: 50%;
+  }
+
+  .lg\:w-64{
+    width: 16rem;
+  }
+
+  .lg\:flex-row{
+    flex-direction: row;
+  }
+
+  .lg\:gap-6{
+    gap: 1.5rem;
+  }
+
+  .lg\:p-12{
+    padding: 3rem;
+  }
+
+  .lg\:p-14{
+    padding: 3.5rem;
+  }
+
+  .lg\:p-16{
+    padding: 4rem;
+  }
+
+  .lg\:p-5{
+    padding: 1.25rem;
+  }
+
+  .lg\:px-12{
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+
+  .lg\:px-14{
+    padding-left: 3.5rem;
+    padding-right: 3.5rem;
+  }
+
+  .lg\:py-20{
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+
+  .lg\:pt-36{
+    padding-top: 9rem;
+  }
+
+  .lg\:text-4xl{
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+  }
+
+  .lg\:text-5xl{
+    font-size: 3rem;
+    line-height: 1;
+  }
+
+  .lg\:text-7xl{
+    font-size: 4.5rem;
+    line-height: 1;
+  }
+
+  .lg\:text-base{
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
 }
