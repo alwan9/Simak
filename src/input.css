@@ -250,3 +250,12 @@ a:hover .arrow-icon, button:hover .arrow-icon {
     border-radius: 9999px;
     margin-bottom: 1rem;
 }
+
+/* Hide scrollbar utility */
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+.no-scrollbar {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}

@@ -180,6 +180,7 @@ document.addEventListener('keydown', (e) => {
 // ========== CLIENT-SIDE SEARCH FILTER ==========
 const navSearchInput = document.getElementById('nav-search-input');
 const mobileSearchInput = document.getElementById('mobile-search-input');
+const mainSearchInput = document.getElementById('main-search-input');
 
 function filterProducts(query) {
     const cards = document.querySelectorAll('.product-card');
@@ -199,6 +200,7 @@ if (navSearchInput) {
     navSearchInput.addEventListener('input', (e) => {
         filterProducts(e.target.value);
         if (mobileSearchInput) mobileSearchInput.value = e.target.value;
+        if (mainSearchInput) mainSearchInput.value = e.target.value;
     });
 }
 
@@ -206,5 +208,147 @@ if (mobileSearchInput) {
     mobileSearchInput.addEventListener('input', (e) => {
         filterProducts(e.target.value);
         if (navSearchInput) navSearchInput.value = e.target.value;
+        if (mainSearchInput) mainSearchInput.value = e.target.value;
     });
+}
+
+if (mainSearchInput) {
+    mainSearchInput.addEventListener('input', (e) => {
+        filterProducts(e.target.value);
+        if (navSearchInput) navSearchInput.value = e.target.value;
+        if (mobileSearchInput) mobileSearchInput.value = e.target.value;
+        // Reset category buttons highlighting to All if they type something custom
+        setActiveCategoryButton(btnCatAll);
+    });
+}
+
+// ========== CATEGORY BUTTONS FILTER ==========
+const btnCatAll = document.getElementById('btn-cat-all');
+const btnCatBuah = document.getElementById('btn-cat-buah');
+const btnCatBibit = document.getElementById('btn-cat-bibit');
+
+const catButtons = [btnCatAll, btnCatBuah, btnCatBibit];
+
+function setActiveCategoryButton(activeBtn) {
+    if (!activeBtn) return;
+    catButtons.forEach(btn => {
+        if (btn) {
+            if (btn === activeBtn) {
+                btn.className = "px-6 py-2.5 rounded-full text-xs font-bold bg-neon text-dark transition-all duration-300 shadow-md";
+            } else {
+                btn.className = "px-6 py-2.5 rounded-full text-xs font-bold bg-dark-card text-gray-300 hover:bg-neon hover:text-dark transition-all duration-300 border border-gray-800 hover:border-neon";
+            }
+        }
+    });
+}
+
+if (btnCatAll) {
+    btnCatAll.addEventListener('click', () => {
+        filterProducts('');
+        setActiveCategoryButton(btnCatAll);
+        if (mainSearchInput) mainSearchInput.value = '';
+        if (navSearchInput) navSearchInput.value = '';
+        if (mobileSearchInput) mobileSearchInput.value = '';
+    });
+}
+
+if (btnCatBuah) {
+    btnCatBuah.addEventListener('click', () => {
+        filterProducts('buah');
+        setActiveCategoryButton(btnCatBuah);
+        if (mainSearchInput) mainSearchInput.value = '';
+        if (navSearchInput) navSearchInput.value = '';
+        if (mobileSearchInput) mobileSearchInput.value = '';
+    });
+}
+
+if (btnCatBibit) {
+    btnCatBibit.addEventListener('click', () => {
+        filterProducts('bibit');
+        setActiveCategoryButton(btnCatBibit);
+        if (mainSearchInput) mainSearchInput.value = '';
+        if (navSearchInput) navSearchInput.value = '';
+        if (mobileSearchInput) mobileSearchInput.value = '';
+    });
+}
+
+// ========== URL PARAMETER FILTER ==========
+window.addEventListener('DOMContentLoaded', () => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const categoryParam = urlParams.get('category');
+    if (categoryParam) {
+        filterProducts(categoryParam);
+        if (navSearchInput) navSearchInput.value = categoryParam;
+        if (mobileSearchInput) mobileSearchInput.value = categoryParam;
+        if (mainSearchInput) mainSearchInput.value = categoryParam;
+        
+        // Highlight active button
+        if (categoryParam.toLowerCase() === 'buah') {
+            setActiveCategoryButton(btnCatBuah);
+        } else if (categoryParam.toLowerCase() === 'bibit') {
+            setActiveCategoryButton(btnCatBibit);
+        }
+    }
+});
+
+// ========== TESTIMONIAL SLIDER ==========
+const slides = document.querySelectorAll('.testimonial-slide');
+const dots = document.querySelectorAll('.testi-dot');
+const prevBtn = document.getElementById('prev-testi');
+const nextBtn = document.getElementById('next-testi');
+
+let currentSlide = 0;
+
+function showSlide(index) {
+    if (!slides.length) return;
+    
+    // Normalize index
+    if (index >= slides.length) currentSlide = 0;
+    else if (index < 0) currentSlide = slides.length - 1;
+    else currentSlide = index;
+
+    slides.forEach((slide, i) => {
+        if (i === currentSlide) {
+            slide.classList.remove('hidden');
+            // Small timeout to allow transition to occur after removing hidden class
+            setTimeout(() => {
+                slide.classList.remove('opacity-0', 'translate-x-10');
+                slide.classList.add('opacity-100', 'translate-x-0');
+            }, 20);
+        } else {
+            slide.classList.add('hidden', 'opacity-0', 'translate-x-10');
+            slide.classList.remove('opacity-100', 'translate-x-0');
+        }
+    });
+
+    dots.forEach((dot, i) => {
+        if (i === currentSlide) {
+            dot.classList.remove('bg-gray-300');
+            dot.classList.add('bg-neon');
+        } else {
+            dot.classList.remove('bg-neon');
+            dot.classList.add('bg-gray-300');
+        }
+    });
+}
+
+if (prevBtn && nextBtn) {
+    prevBtn.addEventListener('click', () => {
+        showSlide(currentSlide - 1);
+    });
+
+    nextBtn.addEventListener('click', () => {
+        showSlide(currentSlide + 1);
+    });
+
+    dots.forEach((dot, i) => {
+        dot.addEventListener('click', () => {
+            showSlide(i);
+        });
+    });
+
+    // Auto play every 6 seconds
+    setInterval(() => {
+        showSlide(currentSlide + 1);
+    }, 6000);
 }
