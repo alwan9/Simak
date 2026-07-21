@@ -145,17 +145,18 @@ img {
     border: 1px solid var(--gray-border);
     border-radius: 1rem;
     overflow: hidden;
-    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .product-card:hover {
-    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08);
+    border-color: var(--neon);
+    box-shadow: 0 20px 40px rgba(184, 240, 38, 0.08), 0 0 0 1.5px rgba(184, 240, 38, 0.25);
     transform: translateY(-6px);
 }
-.product-card img {
-    transition: transform 0.5s ease;
-}
-.product-card:hover img {
-    transform: scale(1.06);
+.product-card:hover .cart-icon-btn {
+    background-color: var(--neon);
+    color: var(--dark);
+    transform: scale(1.1);
+    box-shadow: 0 0 15px rgba(184, 240, 38, 0.4);
 }
 
 /* Badge */
@@ -167,6 +168,31 @@ img {
     border-radius: 9999px;
     letter-spacing: 0.02em;
     text-transform: capitalize;
+}
+
+/* Filter Pills */
+.filter-pill {
+    background-color: var(--light);
+    color: var(--muted-g);
+    font-size: 0.8rem;
+    font-weight: 700;
+    padding: 0.5rem 1.25rem;
+    border-radius: 9999px;
+    border: 1px solid var(--gray-border);
+    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    cursor: pointer;
+    outline: none;
+}
+.filter-pill:hover {
+    color: var(--dark);
+    border-color: var(--dark);
+    transform: translateY(-1px);
+}
+.filter-pill.active {
+    background-color: var(--dark);
+    color: var(--neon);
+    border-color: var(--dark);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
 }
 
 /* ========== FEATURE BAR ========== */
@@ -258,4 +284,68 @@ a:hover .arrow-icon, button:hover .arrow-icon {
 .no-scrollbar {
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;  /* Firefox */
+}
+
+/* ========== ULTRA-SMALL SCREENS (iPhones / SE / 320px - 375px) ========== */
+@media (max-width: 375px) {
+    /* Optimize general page spacing */
+    header, section, footer {
+        padding-left: 1.25rem !important;
+        padding-right: 1.25rem !important;
+    }
+    
+    /* Scale down hero text sizes slightly for iPhone */
+    header h1 {
+        font-size: 1.65rem !important;
+        line-height: 1.15 !important;
+    }
+    header p {
+        font-size: 0.75rem !important;
+        margin-top: 0.5rem !important;
+    }
+    
+    /* Shrink the overlapping feature bar so it doesn't wrap or text overlap */
+    .feature-bar {
+        padding: 0.75rem 0.25rem !important;
+    }
+    .feature-bar h4 {
+        font-size: 8px !important;
+    }
+    .feature-bar p {
+        font-size: 7px !important;
+    }
+    .feature-bar .w-9, .feature-bar .h-9 {
+        width: 1.75rem !important;
+        height: 1.75rem !important;
+        margin-bottom: 0.15rem !important;
+    }
+    .feature-bar svg {
+        width: 0.85rem !important;
+        height: 0.85rem !important;
+    }
+
+    /* Compress padding in cards */
+    .product-card .p-4 {
+        padding: 0.75rem !important;
+    }
+    .product-card h3 {
+        font-size: 0.75rem !important;
+    }
+    .product-card .text-base {
+        font-size: 0.875rem !important;
+    }
+    
+    /* Optimize testimonials slider padding */
+    #Testimoni .p-8 {
+        padding: 1.25rem 1rem !important;
+    }
+    
+    /* Product details modal adjustments */
+    #productModal #modalContent {
+        max-height: 94vh !important;
+        overflow-y: auto !important;
+    }
+    #productModal .h-64 {
+        height: 12.5rem !important;
+    }
 }

@@ -560,6 +560,10 @@ video {
   pointer-events: none;
 }
 
+.visible{
+  visibility: visible;
+}
+
 .static{
   position: static;
 }
@@ -596,8 +600,16 @@ video {
   top: -2rem;
 }
 
+.bottom-3{
+  bottom: 0.75rem;
+}
+
 .bottom-6{
   bottom: 1.5rem;
+}
+
+.left-1\/2{
+  left: 50%;
 }
 
 .left-2\.5{
@@ -608,12 +620,20 @@ video {
   left: 0.75rem;
 }
 
+.left-4{
+  left: 1rem;
+}
+
 .left-5{
   left: 1.25rem;
 }
 
 .left-6{
   left: 1.5rem;
+}
+
+.right-3{
+  right: 0.75rem;
 }
 
 .right-4{
@@ -626,6 +646,10 @@ video {
 
 .top-0{
   top: 0px;
+}
+
+.top-1\/2{
+  top: 50%;
 }
 
 .top-2{
@@ -726,6 +750,10 @@ video {
   margin-top: 3rem;
 }
 
+.mt-14{
+  margin-top: 3.5rem;
+}
+
 .mt-2{
   margin-top: 0.5rem;
 }
@@ -786,6 +814,10 @@ video {
   height: 4rem;
 }
 
+.h-2{
+  height: 0.5rem;
+}
+
 .h-2\.5{
   height: 0.625rem;
 }
@@ -822,6 +854,10 @@ video {
   height: 1.5rem;
 }
 
+.h-64{
+  height: 16rem;
+}
+
 .h-8{
   height: 2rem;
 }
@@ -856,6 +892,10 @@ video {
 
 .w-16{
   width: 4rem;
+}
+
+.w-2{
+  width: 0.5rem;
 }
 
 .w-2\.5{
@@ -963,6 +1003,16 @@ video {
   transform-origin: left;
 }
 
+.-translate-x-1\/2{
+  --tw-translate-x: -50%;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.-translate-y-1\/2{
+  --tw-translate-y: -50%;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
 .translate-x-0{
   --tw-translate-x: 0px;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
@@ -970,6 +1020,12 @@ video {
 
 .translate-x-10{
   --tw-translate-x: 2.5rem;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.scale-100{
+  --tw-scale-x: 1;
+  --tw-scale-y: 1;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
@@ -1047,6 +1103,10 @@ video {
 
 .gap-1{
   gap: 0.25rem;
+}
+
+.gap-1\.5{
+  gap: 0.375rem;
 }
 
 .gap-10{
@@ -1219,8 +1279,16 @@ video {
   --tw-bg-opacity: 0.3;
 }
 
+.bg-opacity-50{
+  --tw-bg-opacity: 0.5;
+}
+
 .bg-opacity-60{
   --tw-bg-opacity: 0.6;
+}
+
+.bg-opacity-80{
+  --tw-bg-opacity: 0.8;
 }
 
 .bg-opacity-90{
@@ -1396,10 +1464,6 @@ video {
 
 .pl-9{
   padding-left: 2.25rem;
-}
-
-.pt-12{
-  padding-top: 3rem;
 }
 
 .pt-14{
@@ -1610,6 +1674,12 @@ video {
   opacity: 0.5;
 }
 
+.shadow{
+  --tw-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
 .shadow-2xl{
   --tw-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
   --tw-shadow-colored: 0 25px 50px -12px var(--tw-shadow-color);
@@ -1677,6 +1747,12 @@ video {
   transition-duration: 150ms;
 }
 
+.transition-opacity{
+  transition-property: opacity;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
 .transition-transform{
   transition-property: transform;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -1689,6 +1765,18 @@ video {
 
 .duration-500{
   transition-duration: 500ms;
+}
+
+.duration-700{
+  transition-duration: 700ms;
+}
+
+.ease-in-out{
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.ease-out{
+  transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
 }
 
 /* ========== BASE ========== */
@@ -1879,20 +1967,20 @@ img {
   border: 1px solid var(--gray-border);
   border-radius: 1rem;
   overflow: hidden;
-  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .product-card:hover {
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08);
+  border-color: var(--neon);
+  box-shadow: 0 20px 40px rgba(184, 240, 38, 0.08), 0 0 0 1.5px rgba(184, 240, 38, 0.25);
   transform: translateY(-6px);
 }
 
-.product-card img {
-  transition: transform 0.5s ease;
-}
-
-.product-card:hover img {
-  transform: scale(1.06);
+.product-card:hover .cart-icon-btn {
+  background-color: var(--neon);
+  color: var(--dark);
+  transform: scale(1.1);
+  box-shadow: 0 0 15px rgba(184, 240, 38, 0.4);
 }
 
 /* Badge */
@@ -1905,6 +1993,34 @@ img {
   border-radius: 9999px;
   letter-spacing: 0.02em;
   text-transform: capitalize;
+}
+
+/* Filter Pills */
+
+.filter-pill {
+  background-color: var(--light);
+  color: var(--muted-g);
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 0.5rem 1.25rem;
+  border-radius: 9999px;
+  border: 1px solid var(--gray-border);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+  outline: none;
+}
+
+.filter-pill:hover {
+  color: var(--dark);
+  border-color: var(--dark);
+  transform: translateY(-1px);
+}
+
+.filter-pill.active {
+  background-color: var(--dark);
+  color: var(--neon);
+  border-color: var(--dark);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
 }
 
 /* ========== FEATURE BAR ========== */
@@ -2027,6 +2143,90 @@ a:hover .arrow-icon, button:hover .arrow-icon {
   /* Firefox */
 }
 
+/* ========== ULTRA-SMALL SCREENS (iPhones / SE / 320px - 375px) ========== */
+
+@media (max-width: 375px) {
+  /* Optimize general page spacing */
+
+  header, section, footer {
+    padding-left: 1.25rem !important;
+    padding-right: 1.25rem !important;
+  }
+
+  /* Scale down hero text sizes slightly for iPhone */
+
+  header h1 {
+    font-size: 1.65rem !important;
+    line-height: 1.15 !important;
+  }
+
+  header p {
+    font-size: 0.75rem !important;
+    margin-top: 0.5rem !important;
+  }
+
+  /* Shrink the overlapping feature bar so it doesn't wrap or text overlap */
+
+  .feature-bar {
+    padding: 0.75rem 0.25rem !important;
+  }
+
+  .feature-bar h4 {
+    font-size: 8px !important;
+  }
+
+  .feature-bar p {
+    font-size: 7px !important;
+  }
+
+  .feature-bar .w-9, .feature-bar .h-9 {
+    width: 1.75rem !important;
+    height: 1.75rem !important;
+    margin-bottom: 0.15rem !important;
+  }
+
+  .feature-bar svg {
+    width: 0.85rem !important;
+    height: 0.85rem !important;
+  }
+
+  /* Compress padding in cards */
+
+  .product-card .p-4 {
+    padding: 0.75rem !important;
+  }
+
+  .product-card h3 {
+    font-size: 0.75rem !important;
+  }
+
+  .product-card .text-base {
+    font-size: 0.875rem !important;
+  }
+
+  /* Optimize testimonials slider padding */
+
+  #Testimoni .p-8 {
+    padding: 1.25rem 1rem !important;
+  }
+
+  /* Product details modal adjustments */
+
+  #productModal #modalContent {
+    max-height: 94vh !important;
+    overflow-y: auto !important;
+  }
+
+  #productModal .h-64 {
+    height: 12.5rem !important;
+  }
+}
+
+.hover\:-translate-y-0\.5:hover{
+  --tw-translate-y: -0.125rem;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
 .hover\:-translate-y-2:hover{
   --tw-translate-y: -0.5rem;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
@@ -2041,6 +2241,14 @@ a:hover .arrow-icon, button:hover .arrow-icon {
 .hover\:bg-red-100:hover{
   --tw-bg-opacity: 1;
   background-color: rgb(254 226 226 / var(--tw-bg-opacity));
+}
+
+.hover\:bg-opacity-100:hover{
+  --tw-bg-opacity: 1;
+}
+
+.hover\:bg-opacity-80:hover{
+  --tw-bg-opacity: 0.8;
 }
 
 .hover\:text-red-500:hover{
@@ -2060,6 +2268,12 @@ a:hover .arrow-icon, button:hover .arrow-icon {
 .hover\:shadow-2xl:hover{
   --tw-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
   --tw-shadow-colored: 0 25px 50px -12px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.hover\:shadow-lg:hover{
+  --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
@@ -2085,6 +2299,18 @@ a:hover .arrow-icon, button:hover .arrow-icon {
   color: rgb(156 163 175 / var(--tw-text-opacity));
 }
 
+.group\/slider:hover .group-hover\/slider\:opacity-100{
+  opacity: 1;
+}
+
+.group:hover .group-hover\:opacity-0{
+  opacity: 0;
+}
+
+.group:hover .group-hover\:opacity-100{
+  opacity: 1;
+}
+
 @media (min-width: 640px){
   .sm\:block{
     display: block;
@@ -2098,12 +2324,16 @@ a:hover .arrow-icon, button:hover .arrow-icon {
     height: 3rem;
   }
 
-  .sm\:h-48{
-    height: 12rem;
+  .sm\:h-52{
+    height: 13rem;
   }
 
   .sm\:h-6{
     height: 1.5rem;
+  }
+
+  .sm\:h-80{
+    height: 20rem;
   }
 
   .sm\:w-12{

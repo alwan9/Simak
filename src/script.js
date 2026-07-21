@@ -122,7 +122,7 @@ if (imageViewer && viewerImg) {
     });
 }
 
-// ========== PRODUCT DETAIL MODAL ==========
+// ========== PRODUCT DETAIL MODAL & SLIDER ==========
 const productModal = document.getElementById('productModal');
 const modalBackdrop = document.getElementById('modalBackdrop');
 const modalClose = document.getElementById('modalClose');
@@ -131,9 +131,108 @@ const modalCategory = document.getElementById('modalCategory');
 const modalDesc = document.getElementById('modalDesc');
 const modalPrice = document.getElementById('modalPrice');
 const modalBadge = document.getElementById('modalBadge');
-const modalImgBibit = document.getElementById('modalImgBibit');
-const modalImgHasil = document.getElementById('modalImgHasil');
 const modalWaBtn = document.getElementById('modalWaBtn');
+
+// Slider controls
+const modalSliderWrapper = document.getElementById('modalSliderWrapper');
+const modalSliderLabel = document.getElementById('modalSliderLabel');
+const modalSliderPrev = document.getElementById('modalSliderPrev');
+const modalSliderNext = document.getElementById('modalSliderNext');
+const modalSliderDots = document.getElementById('modalSliderDots');
+
+let modalImages = [];
+let activeModalImgIndex = 0;
+
+function updateModalSlider() {
+    if (!modalSliderWrapper || !modalImages.length) return;
+    
+    // Slide images horizontally
+    modalSliderWrapper.style.transform = `translateX(-${activeModalImgIndex * 100}%)`;
+    
+    // Update label text
+    const currentImg = modalImages[activeModalImgIndex];
+    modalSliderLabel.textContent = currentImg.label || `Dokumentasi #${activeModalImgIndex + 1}`;
+    
+    // Update dots style
+    const dotsList = modalSliderDots.querySelectorAll('span');
+    dotsList.forEach((dot, idx) => {
+        if (idx === activeModalImgIndex) {
+            dot.className = "w-2.5 h-2.5 rounded-full bg-neon transition-all duration-300";
+        } else {
+            dot.className = "w-2 h-2 rounded-full bg-white bg-opacity-50 hover:bg-opacity-80 transition-all duration-300 cursor-pointer";
+        }
+    });
+}
+
+function initModalSlider(imagesArray) {
+    modalImages = imagesArray.filter(img => img.url); // filter out empty URLs
+    activeModalImgIndex = 0;
+    
+    if (!modalSliderWrapper) return;
+    
+    // Clear previous images and dots
+    modalSliderWrapper.innerHTML = '';
+    modalSliderDots.innerHTML = '';
+    
+    if (modalImages.length === 0) {
+        modalSliderLabel.classList.add('hidden');
+        modalSliderPrev.classList.add('hidden');
+        modalSliderNext.classList.add('hidden');
+        return;
+    }
+    
+    modalSliderLabel.classList.remove('hidden');
+    
+    // Create image elements
+    modalImages.forEach((img) => {
+        const slide = document.createElement('div');
+        slide.className = "w-full h-full flex-shrink-0";
+        
+        const image = document.createElement('img');
+        image.src = img.url;
+        image.alt = img.label || 'Dokumentasi Tanaman';
+        image.className = "w-full h-full object-cover";
+        
+        slide.appendChild(image);
+        modalSliderWrapper.appendChild(slide);
+    });
+    
+    // Create dot indicators & toggle navigation button visibilities
+    if (modalImages.length > 1) {
+        modalSliderPrev.classList.remove('hidden');
+        modalSliderNext.classList.remove('hidden');
+        
+        modalImages.forEach((_, idx) => {
+            const dot = document.createElement('span');
+            dot.addEventListener('click', () => {
+                activeModalImgIndex = idx;
+                updateModalSlider();
+            });
+            modalSliderDots.appendChild(dot);
+        });
+    } else {
+        modalSliderPrev.classList.add('hidden');
+        modalSliderNext.classList.add('hidden');
+    }
+    
+    updateModalSlider();
+}
+
+if (modalSliderPrev) {
+    modalSliderPrev.addEventListener('click', (e) => {
+        e.stopPropagation();
+        activeModalImgIndex = (activeModalImgIndex - 1 + modalImages.length) % modalImages.length;
+        updateModalSlider();
+    });
+}
+
+if (modalSliderNext) {
+    modalSliderNext.addEventListener('click', (e) => {
+        e.stopPropagation();
+        activeModalImgIndex = (activeModalImgIndex + 1) % modalImages.length;
+        updateModalSlider();
+    });
+}
 
 function openProductModal(card) {
     if (!productModal) return;
@@ -143,9 +242,28 @@ function openProductModal(card) {
     modalDesc.textContent = card.dataset.desc || '';
     modalPrice.textContent = card.dataset.price || '';
     modalBadge.textContent = card.dataset.badge || '';
-    modalImgBibit.src = card.dataset.imgBibit || '';
-    modalImgHasil.src = card.dataset.imgHasil || '';
     modalWaBtn.href = card.dataset.wa || '#';
+
+    // Parse image list
+    const images = [];
+    
+    // If the card has custom data-images comma separated
+    if (card.dataset.images) {
+        const customImgs = card.dataset.images.split(',');
+        customImgs.forEach((url, idx) => {
+            images.push({ url: url.trim(), label: `Foto Dokumentasi #${idx + 1}` });
+        });
+    } else {
+        // Fallback to default bibit and hasil
+        if (card.dataset.imgBibit) {
+            images.push({ url: card.dataset.imgBibit, label: '🌱 Kondisi Bibit Tanaman' });
+        }
+        if (card.dataset.imgHasil) {
+            images.push({ url: card.dataset.imgHasil, label: '🌿 Contoh Hasil / Buah Dewasa' });
+        }
+    }
+    
+    initModalSlider(images);
 
     productModal.classList.remove('hidden');
     productModal.classList.add('flex');
@@ -351,4 +469,52 @@ if (prevBtn && nextBtn) {
     setInterval(() => {
         showSlide(currentSlide + 1);
     }, 6000);
+}
+
+// ========== PRODUCT FILTER SYSTEM (Best Sellers) ==========
+const filterPills = document.querySelectorAll('.filter-pill');
+const productCards = document.querySelectorAll('#Produk .product-card');
+
+if (filterPills.length && productCards.length) {
+    filterPills.forEach(pill => {
+        pill.addEventListener('click', () => {
+            // Remove active class from all pills
+            filterPills.forEach(p => p.classList.remove('active'));
+            // Add active class to clicked pill
+            pill.classList.add('active');
+            
+            const filterValue = pill.dataset.filter;
+            
+            productCards.forEach(card => {
+                const category = card.dataset.category.toLowerCase();
+                
+                let show = false;
+                if (filterValue === 'all') {
+                    show = true;
+                } else if (filterValue === 'buah' && category.includes('buah')) {
+                    show = true;
+                } else if (filterValue === 'hias' && category.includes('hias')) {
+                    show = true;
+                } else if (filterValue === 'bibit' && category.includes('bibit')) {
+                    show = true;
+                }
+                
+                if (show) {
+                    card.style.display = 'block';
+                    // trigger layout reflow to allow transition
+                    card.getBoundingClientRect();
+                    card.style.opacity = '1';
+                    card.style.transform = 'scale(1) translateY(0)';
+                } else {
+                    card.style.opacity = '0';
+                    card.style.transform = 'scale(0.95) translateY(12px)';
+                    setTimeout(() => {
+                        if (card.style.opacity === '0') {
+                            card.style.display = 'none';
+                        }
+                    }, 350);
+                }
+            });
+        });
+    });
 }

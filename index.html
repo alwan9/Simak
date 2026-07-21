@@ -111,12 +111,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
             <!-- Navigation Links (Scrollable horizontally on mobile, static on desktop) -->
             <div class="flex items-center gap-5 overflow-x-auto no-scrollbar max-w-full -mx-6 px-6 md:mx-0 md:px-0 text-xs md:text-sm font-semibold py-1">
-                <a href="index.html#Beranda" class="text-neon transition flex-shrink-0 whitespace-nowrap">Home</a>
-                <a href="index.html#Kategori" class="text-gray-300 hover:text-neon transition flex-shrink-0 whitespace-nowrap">Kategori</a>
-                <a href="index.html#Produk" class="text-gray-300 hover:text-neon transition flex-shrink-0 whitespace-nowrap">Produk</a>
-                <a href="index.html#Tentang" class="text-gray-300 hover:text-neon transition flex-shrink-0 whitespace-nowrap">Tentang Kami</a>
-                <a href="index.html#Kontak" class="text-gray-300 hover:text-neon transition flex-shrink-0 whitespace-nowrap">Kontak</a>
-                <a href="katalog.html" class="text-gray-300 hover:text-neon transition flex-shrink-0 whitespace-nowrap">Marketplace</a>
+                <a href="index.html#Beranda" class="nav-link text-neon transition flex-shrink-0 whitespace-nowrap">Home</a>
+                <a href="index.html#Kategori" class="nav-link text-gray-300 hover:text-neon transition flex-shrink-0 whitespace-nowrap">Kategori</a>
+                <a href="index.html#Produk" class="nav-link text-gray-300 hover:text-neon transition flex-shrink-0 whitespace-nowrap">Produk</a>
+                <a href="index.html#Tentang" class="nav-link text-gray-300 hover:text-neon transition flex-shrink-0 whitespace-nowrap">Tentang Kami</a>
+                <a href="index.html#Kontak" class="nav-link text-gray-300 hover:text-neon transition flex-shrink-0 whitespace-nowrap">Kontak</a>
+                <a href="katalog.html" class="nav-link text-gray-300 hover:text-neon transition flex-shrink-0 whitespace-nowrap">Marketplace</a>
             </div>
 
             <!-- Search Input for Desktop (hidden on mobile) -->
@@ -171,7 +171,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
             <!-- Hero Image -->
             <div class="w-[38%] md:w-[45%] flex-shrink-0 relative">
-                <img src="./img/foto.png" alt="Koleksi Tanaman Hias SIMAK Purwokerto" class="w-full max-w-md mx-auto rounded-2xl md:rounded-3xl relative z-10">
+                <img src="./img/foto.png" alt="Koleksi Tanaman Hias SIMAK Purwokerto" class="w-full max-w-md mx-auto rounded-2xl md:rounded-3xl relative z-10 float-anim">
                 <div class="absolute -top-8 -right-8 w-32 h-32 md:w-72 md:h-72 rounded-full bg-neon opacity-10 blur-3xl pointer-events-none"></div>
                 <div class="absolute -bottom-8 -left-8 w-24 h-24 md:w-48 md:h-48 rounded-full bg-neon opacity-10 blur-3xl pointer-events-none"></div>
             </div>
@@ -181,8 +181,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- Feature Bar (overlapping) -->
     <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-12 pb-16">
         <div class="feature-bar py-6 sm:py-8 px-2 sm:px-6 grid grid-cols-4 gap-2 sm:gap-6">
-            <div class="flex flex-col items-center text-center gap-1 sm:gap-2">
-                <div class="w-9 h-9 sm:w-12 sm:h-12 rounded-full bg-dark-card flex items-center justify-center text-neon flex-shrink-0 mb-1">
+            <div class="feature-item flex flex-col items-center text-center gap-1 sm:gap-2">
+                <div class="icon-wrapper w-9 h-9 sm:w-12 sm:h-12 rounded-full bg-dark-card flex items-center justify-center text-neon flex-shrink-0 mb-1">
                     <svg class="w-4.5 h-4.5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
                 </div>
                 <div>
@@ -190,8 +190,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <p class="text-[8px] sm:text-xs text-gray-500 mt-0.5 leading-tight">Tanaman sehat & organik</p>
                 </div>
             </div>
-            <div class="flex flex-col items-center text-center gap-1 sm:gap-2">
-                <div class="w-9 h-9 sm:w-12 sm:h-12 rounded-full bg-dark-card flex items-center justify-center text-neon flex-shrink-0 mb-1">
+            <div class="feature-item flex flex-col items-center text-center gap-1 sm:gap-2">
+                <div class="icon-wrapper w-9 h-9 sm:w-12 sm:h-12 rounded-full bg-dark-card flex items-center justify-center text-neon flex-shrink-0 mb-1">
                     <svg class="w-4.5 h-4.5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
                 </div>
                 <div>
@@ -199,8 +199,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <p class="text-[8px] sm:text-xs text-gray-500 mt-0.5 leading-tight">Langsung ke rumah Anda</p>
                 </div>
             </div>
-            <div class="flex flex-col items-center text-center gap-1 sm:gap-2">
-                <div class="w-9 h-9 sm:w-12 sm:h-12 rounded-full bg-dark-card flex items-center justify-center text-neon flex-shrink-0 mb-1">
+            <div class="feature-item flex flex-col items-center text-center gap-1 sm:gap-2">
+                <div class="icon-wrapper w-9 h-9 sm:w-12 sm:h-12 rounded-full bg-dark-card flex items-center justify-center text-neon flex-shrink-0 mb-1">
                     <svg class="w-4.5 h-4.5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
                 </div>
                 <div>
@@ -208,8 +208,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <p class="text-[8px] sm:text-xs text-gray-500 mt-0.5 leading-tight">Bayar via WA/Transfer</p>
                 </div>
             </div>
-            <div class="flex flex-col items-center text-center gap-1 sm:gap-2">
-                <div class="w-9 h-9 sm:w-12 sm:h-12 rounded-full bg-dark-card flex items-center justify-center text-neon flex-shrink-0 mb-1">
+            <div class="feature-item flex flex-col items-center text-center gap-1 sm:gap-2">
+                <div class="icon-wrapper w-9 h-9 sm:w-12 sm:h-12 rounded-full bg-dark-card flex items-center justify-center text-neon flex-shrink-0 mb-1">
                     <svg class="w-4.5 h-4.5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/></svg>
                 </div>
                 <div>
@@ -318,17 +318,30 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- ============================================================ -->
 <section id="Produk" class="bg-white py-16 lg:py-20 px-6 lg:px-12">
     <div class="max-w-7xl mx-auto">
-        <div class="flex justify-between items-end mb-10">
-            <h2 class="text-3xl lg:text-4xl font-extrabold text-dark">Produk Terlaris</h2>
-            <a href="katalog.html" class="hidden md:flex items-center text-sm font-bold text-dark hover:text-neon gap-1 transition">
-                Lihat Semua <svg class="arrow-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
-            </a>
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+        <!-- Centered Premium Section Header -->
+        <div class="text-center max-w-2xl mx-auto mb-12">
+            <span class="inline-block bg-green-100 text-green-850 text-[10px] sm:text-xs font-bold px-4 py-1.5 rounded-full mb-3 tracking-wider uppercase shadow-sm">Pilihan Terfavorit</span>
+            <h2 class="text-3xl lg:text-4xl font-extrabold text-dark mb-4">Produk Terlaris</h2>
+            <p class="text-muted-g text-sm leading-relaxed">Pilihan tanaman terpopuler yang paling banyak dibeli dan dirawat oleh pelanggan kami di Purwokerto.</p>
+            
+            <!-- Category Filter Pills -->
+            <div class="flex flex-wrap gap-2 justify-center mt-8">
+                <button class="filter-pill active" data-filter="all">Semua</button>
+                <button class="filter-pill" data-filter="buah">Tanaman Buah</button>
+                <button class="filter-pill" data-filter="hias">Tanaman Hias</button>
+                <button class="filter-pill" data-filter="bibit">Bibit Unggul</button>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
             <!-- Product 1: Jeruk Limau -->
-            <div class="product-card cursor-pointer" data-name="Jeruk Limau" data-category="Katalog Buah • Segar" data-price="Rp 35.000" data-badge="Best Seller" data-img-bibit="./img/dokumentasi/jeruk limau (2).jfif" data-img-hasil="./img/dokumentasi/jeruk limau.jpg" data-desc="Tanaman jeruk limau siap tanam. Menghasilkan buah jeruk limau segar beraroma harum khas, sangat cocok untuk bumbu penyedap masakan Anda." data-wa="https://wa.me/6281234567890?text=Halo,%20saya%20tertarik%20dengan%20Jeruk%20Limau%20(Rp%2035.000)">
-                <div class="relative overflow-hidden">
-                    <span class="badge bg-yellow-100 text-yellow-700 absolute top-3 left-3 z-10">Best Seller</span>
-                    <img src="./img/dokumentasi/jeruk limau.jpg" alt="Jeruk Limau" class="w-full h-44 object-cover">
+            <div class="product-card cursor-pointer transition-all duration-300" data-name="Jeruk Limau" data-category="Katalog Buah • Segar" data-price="Rp 35.000" data-badge="Best Seller" data-images="./img/dokumentasi/jeruk limau (2).jfif, ./img/dokumentasi/jeruk limau.jpg, ./img/dokumentasi/jeruk limau (3).jfif, ./img/dokumentasi/jeruk limau (4).jfif" data-desc="Tanaman jeruk limau siap tanam. Menghasilkan buah jeruk limau segar beraroma harum khas, sangat cocok untuk bumbu penyedap masakan Anda." data-wa="https://wa.me/6281234567890?text=Halo,%20saya%20tertarik%20dengan%20Jeruk%20Limau%20(Rp%2035.000)">
+                <div class="relative overflow-hidden h-44 sm:h-52">
+                    <span class="badge bg-yellow-100 text-yellow-700 absolute top-3 left-3 z-20">Best Seller</span>
+                    <!-- Default Image (Bibit) -->
+                    <img src="./img/dokumentasi/jeruk limau (2).jfif" alt="Jeruk Limau Bibit" class="w-full h-full object-cover absolute inset-0 transition-all duration-700 ease-in-out group-hover:scale-105 group-hover:opacity-0 z-10">
+                    <!-- Hover Image (Hasil) -->
+                    <img src="./img/dokumentasi/jeruk limau.jpg" alt="Jeruk Limau Hasil" class="w-full h-full object-cover absolute inset-0 transition-all duration-700 ease-in-out scale-100 group-hover:scale-105 opacity-0 group-hover:opacity-100">
                 </div>
                 <div class="p-4">
                     <h3 class="font-bold text-dark text-sm leading-tight">Jeruk Limau</h3>
@@ -343,10 +356,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </div>
 
             <!-- Product 2: Jambu Air -->
-            <div class="product-card cursor-pointer" data-name="Jambu Air" data-category="Katalog Buah • Manis" data-price="Rp 50.000" data-badge="Organik" data-img-bibit="./img/dokumentasi/jambuairtsg1.webp" data-img-hasil="./img/dokumentasi/jambu air.jpg" data-desc="Pohon jambu air unggulan. Daging buah tebal, renyah, berair, dan rasanya manis segar. Sangat mudah berbuah di pekarangan." data-wa="https://wa.me/6281234567890?text=Halo,%20saya%20tertarik%20dengan%20Jambu%20Air%20(Rp%2050.000)">
-                <div class="relative overflow-hidden">
-                    <span class="badge bg-green-100 text-green-700 absolute top-3 left-3 z-10">Organik</span>
-                    <img src="./img/dokumentasi/jambu air.jpg" alt="Jambu Air" class="w-full h-44 object-cover">
+            <div class="product-card cursor-pointer transition-all duration-300" data-name="Jambu Air" data-category="Katalog Buah • Manis" data-price="Rp 50.000" data-badge="Organik" data-images="./img/dokumentasi/jambuairtsg1.webp, ./img/dokumentasi/jambu air.jpg, ./img/dokumentasi/jambu air.jfif" data-desc="Pohon jambu air unggulan. Daging buah tebal, renyah, berair, dan rasanya manis segar. Sangat mudah berbuah di pekarangan." data-wa="https://wa.me/6281234567890?text=Halo,%20saya%20tertarik%20dengan%20Jambu%20Air%20(Rp%2050.000)">
+                <div class="relative overflow-hidden h-44 sm:h-52">
+                    <span class="badge bg-green-100 text-green-700 absolute top-3 left-3 z-20">Organik</span>
+                    <!-- Default Image (Bibit) -->
+                    <img src="./img/dokumentasi/jambuairtsg1.webp" alt="Jambu Air Bibit" class="w-full h-full object-cover absolute inset-0 transition-all duration-700 ease-in-out group-hover:scale-105 group-hover:opacity-0 z-10">
+                    <!-- Hover Image (Hasil) -->
+                    <img src="./img/dokumentasi/jambu air.jpg" alt="Jambu Air Hasil" class="w-full h-full object-cover absolute inset-0 transition-all duration-700 ease-in-out scale-100 group-hover:scale-105 opacity-0 group-hover:opacity-100">
                 </div>
                 <div class="p-4">
                     <h3 class="font-bold text-dark text-sm leading-tight">Jambu Air</h3>
@@ -361,10 +377,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </div>
 
             <!-- Product 3: Bibit Pepaya California -->
-            <div class="product-card cursor-pointer" data-name="Bibit Pepaya California" data-category="Bibit • Buah" data-price="Rp 25.000" data-badge="Populer" data-img-bibit="./img/dokumentasi/pepaya (2).jfif" data-img-hasil="./img/dokumentasi/pepaya.jfif" data-desc="Bibit pepaya California kualitas super. Cepat tumbuh, pohon kerdil berbuah sangat lebat dengan rasa buah yang manis madu." data-wa="https://wa.me/6281234567890?text=Halo,%20saya%20tertarik%20dengan%20Bibit%20Pepaya%20California%20(Rp%2025.000)">
-                <div class="relative overflow-hidden">
-                    <span class="badge bg-red-100 text-red-700 absolute top-3 left-3 z-10">Populer</span>
-                    <img src="./img/dokumentasi/pepaya.jfif" alt="Bibit Pepaya California" class="w-full h-44 object-cover">
+            <div class="product-card cursor-pointer transition-all duration-300" data-name="Bibit Pepaya California" data-category="Bibit • Buah" data-price="Rp 25.000" data-badge="Populer" data-images="./img/dokumentasi/pepaya (2).jfif, ./img/dokumentasi/pepaya.jfif" data-desc="Bibit pepaya California kualitas super. Cepat tumbuh, pohon kerdil berbuah sangat lebat dengan rasa buah yang manis madu." data-wa="https://wa.me/6281234567890?text=Halo,%20saya%20tertarik%20dengan%20Bibit%20Pepaya%20California%20(Rp%2025.000)">
+                <div class="relative overflow-hidden h-44 sm:h-52">
+                    <span class="badge bg-red-100 text-red-700 absolute top-3 left-3 z-20">Populer</span>
+                    <!-- Default Image (Bibit) -->
+                    <img src="./img/dokumentasi/pepaya (2).jfif" alt="Bibit Pepaya California Bibit" class="w-full h-full object-cover absolute inset-0 transition-all duration-700 ease-in-out group-hover:scale-105 group-hover:opacity-0 z-10">
+                    <!-- Hover Image (Hasil) -->
+                    <img src="./img/dokumentasi/pepaya.jfif" alt="Bibit Pepaya California Hasil" class="w-full h-full object-cover absolute inset-0 transition-all duration-700 ease-in-out scale-100 group-hover:scale-105 opacity-0 group-hover:opacity-100">
                 </div>
                 <div class="p-4">
                     <h3 class="font-bold text-dark text-sm leading-tight">Bibit Pepaya California</h3>
@@ -379,10 +398,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </div>
 
             <!-- Product 4: Bibit Cakaranda -->
-            <div class="product-card cursor-pointer" data-name="Bibit Cakaranda" data-category="Bibit • Tanaman Hias" data-price="Rp 40.000" data-badge="Unik" data-img-bibit="./img/dokumentasi/cakaranda (1).jpg" data-img-hasil="./img/dokumentasi/cakaranda (2).jpg" data-desc="Bibit pohon hias cakaranda (Jacaranda). Tumbuh menjadi pohon rindang menakjubkan dengan hamparan bunga ungu yang indah layaknya sakura." data-wa="https://wa.me/6281234567890?text=Halo,%20saya%20tertarik%20dengan%20Bibit%20Cakaranda%20(Rp%2040.000)">
-                <div class="relative overflow-hidden">
-                    <span class="badge bg-blue-100 text-blue-700 absolute top-3 left-3 z-10">Unik</span>
-                    <img src="./img/dokumentasi/cakaranda (2).jpg" alt="Bibit Cakaranda" class="w-full h-44 object-cover">
+            <div class="product-card cursor-pointer transition-all duration-300" data-name="Bibit Cakaranda" data-category="Bibit • Tanaman Hias" data-price="Rp 40.000" data-badge="Unik" data-images="./img/dokumentasi/cakaranda (1).jpg, ./img/dokumentasi/cakaranda (2).jpg, ./img/dokumentasi/cakaranda.jfif" data-desc="Bibit pohon hias cakaranda (Jacaranda). Tumbuh menjadi pohon rindang menakjubkan dengan hamparan bunga ungu yang indah layaknya sakura." data-wa="https://wa.me/6281234567890?text=Halo,%20saya%20tertarik%20dengan%20Bibit%20Cakaranda%20(Rp%2040.000)">
+                <div class="relative overflow-hidden h-44 sm:h-52">
+                    <span class="badge bg-blue-100 text-blue-700 absolute top-3 left-3 z-20">Unik</span>
+                    <!-- Default Image (Bibit) -->
+                    <img src="./img/dokumentasi/cakaranda (1).jpg" alt="Bibit Cakaranda Bibit" class="w-full h-full object-cover absolute inset-0 transition-all duration-700 ease-in-out group-hover:scale-105 group-hover:opacity-0 z-10">
+                    <!-- Hover Image (Hasil) -->
+                    <img src="./img/dokumentasi/cakaranda (2).jpg" alt="Bibit Cakaranda Hasil" class="w-full h-full object-cover absolute inset-0 transition-all duration-700 ease-in-out scale-100 group-hover:scale-105 opacity-0 group-hover:opacity-100">
                 </div>
                 <div class="p-4">
                     <h3 class="font-bold text-dark text-sm leading-tight">Bibit Cakaranda</h3>
@@ -395,6 +417,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     </div>
                 </div>
             </div>
+        </div>
+
+        <!-- Section Bottom Action CTA Button -->
+        <div class="text-center mt-14">
+            <a href="katalog.html" class="inline-flex items-center gap-2.5 bg-dark text-white hover:bg-neon hover:text-dark px-8 py-4 rounded-full font-extrabold text-sm transition-all duration-300 hover:shadow-lg hover:shadow-neon/20 hover:-translate-y-0.5">
+                Lihat Semua Koleksi
+                <svg class="arrow-icon w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+            </a>
         </div>
     </div>
 </section>
@@ -764,15 +794,27 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
         </button>
 
-        <!-- TOP: Images (Bibit & Hasil side-by-side) -->
-        <div class="grid grid-cols-2 gap-4 bg-gray-50 p-6 pt-12">
-            <div>
-                <p class="text-xs font-bold text-muted-g uppercase tracking-wider mb-2 text-center">🌱 Bibit / Seedling</p>
-                <img id="modalImgBibit" src="" alt="Bibit" class="w-full h-40 sm:h-48 object-cover rounded-2xl border border-gray-200">
+        <!-- TOP: Image Slider (Dynamic Carousel) -->
+        <div class="relative bg-gray-50 h-64 sm:h-80 w-full overflow-hidden group/slider">
+            <!-- Large Image Container -->
+            <div id="modalSliderWrapper" class="w-full h-full flex transition-transform duration-500 ease-out">
+                <!-- Injected dynamically by JS -->
             </div>
-            <div>
-                <p class="text-xs font-bold text-muted-g uppercase tracking-wider mb-2 text-center">🌿 Hasil / Dewasa</p>
-                <img id="modalImgHasil" src="" alt="Hasil" class="w-full h-40 sm:h-48 object-cover rounded-2xl border border-gray-200">
+            
+            <!-- Label Overlay -->
+            <span id="modalSliderLabel" class="absolute top-4 left-4 z-10 bg-black bg-opacity-60 text-white text-xs font-bold px-3 py-1.5 rounded-full backdrop-blur-sm"></span>
+
+            <!-- Navigation Arrows (visible on hover) -->
+            <button id="modalSliderPrev" class="absolute left-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-white bg-opacity-80 hover:bg-opacity-100 shadow flex items-center justify-center text-dark opacity-0 group-hover/slider:opacity-100 transition-opacity duration-300 z-10">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
+            </button>
+            <button id="modalSliderNext" class="absolute right-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-white bg-opacity-80 hover:bg-opacity-100 shadow flex items-center justify-center text-dark opacity-0 group-hover/slider:opacity-100 transition-opacity duration-300 z-10">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+            </button>
+
+            <!-- Indicator Dots -->
+            <div id="modalSliderDots" class="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1.5 z-10">
+                <!-- Injected dynamically by JS -->
             </div>
         </div>
 
