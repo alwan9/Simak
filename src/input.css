@@ -349,3 +349,139 @@ a:hover .arrow-icon, button:hover .arrow-icon {
         height: 12.5rem !important;
     }
 }
+
+/* ========== DARK MODE OVERRIDES ========== */
+.dark {
+    background-color: var(--dark);
+    color: #f3f4f6;
+}
+
+.dark body {
+    background-color: var(--dark) !important;
+    color: #f3f4f6 !important;
+}
+
+/* Toggle theme icon display */
+.dark .theme-toggle-btn .dark-icon {
+    display: block !important;
+}
+.dark .theme-toggle-btn .light-icon {
+    display: none !important;
+}
+
+/* Light sections */
+.dark .bg-white {
+    background-color: var(--dark) !important;
+}
+
+.dark .bg-light {
+    background-color: var(--dark-2) !important;
+}
+
+/* Text color overrides */
+.dark .text-dark {
+    color: #ffffff !important;
+}
+
+.dark .text-gray-600,
+.dark .text-gray-500,
+.dark .text-muted-g {
+    color: #a3b8aa !important; /* light grayish green for better readibility */
+}
+
+.dark .text-gray-800 {
+    color: #e5e7eb !important;
+}
+
+.dark .text-gray-900 {
+    color: #ffffff !important;
+}
+
+/* Cards & Modals styling in Dark mode */
+.dark .product-card,
+.dark .testimonial-card,
+.dark #Testimoni .bg-white,
+.dark #productModal #modalContent,
+.dark #cartDrawer #cartContainer {
+    background-color: var(--dark-card) !important;
+    border-color: #1a4229 !important;
+}
+
+/* Modal and Drawer specifics */
+.dark #productModal #modalContent,
+.dark #cartDrawer #cartContainer {
+    color: #f3f4f6 !important;
+}
+
+.dark #productModal #modalClose,
+.dark #cartDrawer #cartCloseBtn {
+    background-color: var(--dark-2) !important;
+    color: #e5e7eb !important;
+}
+.dark #productModal #modalClose:hover,
+.dark #cartDrawer #cartCloseBtn:hover {
+    background-color: #ef4444 !important;
+    color: #ffffff !important;
+}
+
+/* Inputs in Dark Mode */
+.dark #cartCustName,
+.dark #cartCustAddress,
+.dark #main-search-input {
+    background-color: var(--dark-2) !important;
+    border-color: #163f27 !important;
+    color: #ffffff !important;
+}
+.dark #cartCustName::placeholder,
+.dark #cartCustAddress::placeholder,
+.dark #main-search-input::placeholder {
+    color: #5a7d65 !important;
+}
+
+.dark #cartFooter {
+    background-color: var(--dark-2) !important;
+    border-top-color: #1a4229 !important;
+}
+
+/* Title colors */
+.dark h2, .dark h3, .dark h4 {
+    color: #ffffff !important;
+}
+
+/* Category grid adjustments */
+.dark #Kategori .bg-light {
+    background-color: var(--dark-card) !important;
+}
+.dark #Kategori .bg-light:hover {
+    background-color: var(--dark-2) !important;
+}
+.dark #Kategori .bg-light .text-dark {
+    color: #ffffff !important;
+}
+.dark #Kategori .bg-light:hover .text-dark {
+    color: var(--neon) !important;
+}
+
+/* Feature item text details */
+.dark .feature-item .text-white {
+    color: #ffffff !important;
+}
+.dark .feature-item .text-gray-500 {
+    color: #8fa899 !important;
+}
+
+/* Products grid filters & action CTAs */
+.dark .filter-pill {
+    background-color: var(--dark-card) !important;
+    color: #a3b8aa !important;
+    border-color: #1a4229 !important;
+}
+.dark .filter-pill:hover {
+    color: #ffffff !important;
+    border-color: #ffffff !important;
+}
+.dark .filter-pill.active {
+    background-color: var(--neon) !important;
+    color: var(--dark) !important;
+    border-color: var(--neon) !important;
+}
